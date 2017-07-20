@@ -1,0 +1,13 @@
+<resources>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Basic" parent="AppTheme" />
+
+    <style name="AppTheme.CheckBox">
+        <item name="android:colorAccent">@color/green</item>
+    </style>
+</resources>

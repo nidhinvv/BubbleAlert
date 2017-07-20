@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="outerCircleOffset">3</integer>
+    <integer name="outerCircleRadius">20</integer>
+    <integer name="dialogArc">25</integer>
+    <integer name="dialogSpacing">1</integer>
+</resources>
