@@ -1,12 +1,19 @@
 package com.dkv.bubblealertview;
 
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.dkv.bubblealertlib.AppConstants;
+import com.dkv.bubblealertlib.BblDialogManager;
+import com.dkv.bubblealertlib.ConstantsIcons;
+import com.dkv.bubblealertlib.IAlertClickedCallBack;
+import com.dkv.bubblealertlib.IDialogListener;
 
 /**
  * @author DKV.
@@ -44,14 +51,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 BblDialogManager.showBblDialog(getSupportFragmentManager(),
                         LayoutInflater.from(this), "success", this.getString(R.string.ok),
-                        null, Constants.ALERT_ICON_SUCCESS,
+                        null, ConstantsIcons.ALERT_ICON_SUCCESS,
                         alertHandler, this, AppConstants.TAG_FEEDBACK_SUCCESS);
                 break;
             case R.id.button2:
 
 
                 BblDialogManager.showEditTextBblDialog(getSupportFragmentManager(), LayoutInflater.from(this),
-                        getString(R.string.text_enter_comments), getString(R.string.yes), getString(R.string.alert_cancel), Constants.ALERT_ICON_INFO,
+                        getString(R.string.text_enter_comments), getString(R.string.yes), getString(R.string.alert_cancel), ConstantsIcons.ALERT_ICON_INFO,
                         new IDialogListener() {
                             @Override
                             public void onOkClicked(String tag, String reason) {
@@ -76,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 BblDialogManager.showBblDialog(getSupportFragmentManager(),
                         LayoutInflater.from(this), getString(R.string.msg_creating_msg),
                         getString(R.string.action_continue), getString(R.string.action_save_exit),
-                        getString(R.string.action_exit), Constants.ALERT_ICON_COMMON_INFO,
+                        getString(R.string.action_exit), ConstantsIcons.ALERT_ICON_COMMON_INFO,
                         new IAlertClickedCallBack() {
                             @Override
                             public void onOkClicked(String tag) {
@@ -104,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 BblDialogManager.showBblDialog(getSupportFragmentManager(),
                         LayoutInflater.from(this), getString(R.string.msg_logout_confirmation), getString(R.string.yes),
-                        getString(R.string.no), Constants.ALERT_ICON_INFO,
+                        getString(R.string.no), ConstantsIcons.ALERT_ICON_INFO,
                         alertHandler, this, AppConstants.TAG_LOGOUT_DIALOG);
 
 
