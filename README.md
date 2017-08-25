@@ -3,7 +3,7 @@
 
 Bubble-Alert is a custome alert dialog for Android
 
-[Demo Download](https://github.com/nidhinvv/BubbleAlert/blob/master/APK/BubbleAlert.apk)
+[Demo Download](https://github.com/nidhinvv/BubbleAlert/raw/master/APK/BubbleAlert.apk)
 
 ### Using the module
 
