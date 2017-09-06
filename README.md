@@ -5,6 +5,10 @@ Bubble-Alert is a custome alert dialog for Android
 
 [Demo Download](https://github.com/nidhinvv/BubbleAlert/raw/master/APK/BubbleAlert.apk)
 
+## ScreenShot
+![image](https://github.com/nidhinvv/BubbleAlert/blob/master/APK/Gif/bubble_alert_gif.gif)
+
+
 ### Using the module
 
 ![image](https://github.com/nidhinvv/BubbleAlert/blob/master/app/screens/device-2017-07-20-150016.png)
