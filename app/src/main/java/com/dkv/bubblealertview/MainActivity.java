@@ -1,7 +1,6 @@
 package com.dkv.bubblealertview;
 
 import android.os.Bundle;
-import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -87,12 +86,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         new IAlertClickedCallBack() {
                             @Override
                             public void onOkClicked(String tag) {
-                                Toast.makeText(MainActivity.this, "continua", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Continue", Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
                             public void onCancelClicked(String tag) {
-                                Toast.makeText(MainActivity.this, getString(R.string.alert_cancel), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Save and exit", Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
