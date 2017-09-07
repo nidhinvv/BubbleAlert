@@ -10,7 +10,8 @@ Bubble-Alert is a custome alert dialog for Android
 
 
 ### Using the module
-show material progress
+
+show alert
 
       BblDialogManager.showBblDialog(getSupportFragmentManager(),
                         LayoutInflater.from(this), "success", this.getString(R.string.ok),
