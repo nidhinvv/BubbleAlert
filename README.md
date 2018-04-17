@@ -3,6 +3,25 @@
 
 Bubble-Alert is a custome alert dialog for Android
 
+## Import
+**Sptep 1.** Add jitpack to your root `build.gradle`:
+```gradle
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+**Step 2.** Add the dependency:
+```gradle
+dependencies {
+    implementation 'com.github.nidhinvv:BubbleAlert:-SNAPSHOT'
+}
+```
+
+
+
 [Demo Download](https://github.com/nidhinvv/BubbleAlert/raw/master/APK/BubbleAlert.apk)
 
 ## ScreenShot
