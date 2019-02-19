@@ -34,7 +34,7 @@ public class AlertDrawable extends Drawable {
     private Context mContext;
 
 
-    public AlertDrawable(int outerCircleRadiusDP, int textSizeSP, int cornerArc, String drawText, Context context) {
+    public AlertDrawable(int outerCircleRadiusDP, int textSizeSP, int cornerArc, String drawText, Context context,int circleTitleColorId) {
         mContext = context;
 
         circleRadius = ScreenUtils.unitToPixels(context, TypedValue.COMPLEX_UNIT_DIP, outerCircleRadiusDP);
@@ -51,7 +51,7 @@ public class AlertDrawable extends Drawable {
         mCircleFillPaint = new Paint();
         mCircleFillPaint.setAntiAlias(true);
         mCircleFillPaint.setDither(true);
-        mCircleFillPaint.setColor(ContextCompat.getColor(context, R.color.colorMultiArc));
+        mCircleFillPaint.setColor(circleTitleColorId);
         mCircleFillPaint.setStyle(Paint.Style.FILL);
 
         mOuterCircleFillPaint = new Paint();

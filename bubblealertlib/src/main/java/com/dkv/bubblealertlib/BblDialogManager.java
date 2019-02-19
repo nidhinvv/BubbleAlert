@@ -1,6 +1,7 @@
 package com.dkv.bubblealertlib;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -13,7 +14,7 @@ public class BblDialogManager {
 
     public static void showBblDialog(FragmentManager fm, LayoutInflater inflater, String content,
                                      String ok, String cancel, String drawText,
-                                     IAlertClickedCallBack alertClickedCallBack, Context context, String TAG) {
+                                     IAlertClickedCallBack alertClickedCallBack, Context context, String TAG,int dialogButtonColor,int circleTextBgColor) {
         try {
             BblContentFragment fragment = BblContentFragment.newInstance(TAG);
             if (TextUtils.isEmpty(content)) {
@@ -21,8 +22,10 @@ public class BblDialogManager {
             }
             fragment.setContent(content, ok, cancel, null, null);
             fragment.setClickedCallBack(alertClickedCallBack);
+            fragment.setDialogButtonColor(dialogButtonColor);
+
             BblDialog sampleDialog = new BblDialog();
-            sampleDialog.setContentFragment(fragment, R.layout.layout_bbl_content, inflater, content, drawText, context);
+            sampleDialog.setContentFragment(fragment, R.layout.layout_bbl_content, inflater, content, drawText, context,circleTextBgColor);
             sampleDialog.setDisMissCallBack(null);
             fm.beginTransaction().add(sampleDialog, "Test").commitAllowingStateLoss();
         } catch (Exception e) {
@@ -38,7 +41,7 @@ public class BblDialogManager {
     public static void showEditTextBblDialog(FragmentManager fm, LayoutInflater inflater, String content,
                                              String ok, String cancel, String drawText,
                                              IDialogListener dialogListener, Context context, String textContent,
-                                             String hintText, boolean isMultiline, String TAG) {
+                                             String hintText, boolean isMultiline, String TAG,int dialogButtonColor,int circleTextBgColor) {
         BblContentFragment fragment = BblContentFragment.newInstance(TAG);
 
         if (TextUtils.isEmpty(content)) {
@@ -50,10 +53,11 @@ public class BblDialogManager {
                 .setMultiLine(isMultiline)
                 .setHintText(hintText)
                 .setTextContent(textContent)
+                .setDialogButtonColor(dialogButtonColor)
                 .setDialogListener(dialogListener);
         BblDialog sampleDialog = new BblDialog();
         sampleDialog.setHasEditText(true)
-                .setContentFragment(fragment, R.layout.layout_bbl_content, inflater, content, drawText, context)
+                .setContentFragment(fragment, R.layout.layout_bbl_content, inflater, content, drawText, context,circleTextBgColor)
                 .setDisMissCallBack(null);
         fm.beginTransaction().add(sampleDialog, "Test").commit();
     }
@@ -61,7 +65,7 @@ public class BblDialogManager {
     public static void showEditTextBblDialog(FragmentManager fm, LayoutInflater inflater, String dialogTitle, String content,
                                              String ok, String cancel, String drawText,
                                              IDialogListener dialogListener, Context context, String textContent,
-                                             String hintText, boolean isMultiline, String TAG) {
+                                             String hintText, boolean isMultiline, String TAG,int dialogButtonColorId,int circleTextBgColor) {
 
         BblContentFragment fragment = BblContentFragment.newInstance(TAG);
 
@@ -74,12 +78,13 @@ public class BblDialogManager {
                 .setMultiLine(isMultiline)
                 .setHintText(hintText)
                 .setTextContent(textContent)
+                .setDialogButtonColor(dialogButtonColorId)
                 .setDialogListener(dialogListener);
 
 
         BblDialog sampleDialog = new BblDialog();
         sampleDialog.setHasEditText(true)
-                .setContentFragment(fragment, R.layout.layout_bbl_content, inflater, content, drawText, context)
+                .setContentFragment(fragment, R.layout.layout_bbl_content, inflater, content, drawText, context,circleTextBgColor)
                 .setDisMissCallBack(null);
         fm.beginTransaction().add(sampleDialog, "Test").commit();
     }
@@ -87,7 +92,7 @@ public class BblDialogManager {
 
     public static void showBblDialog(FragmentManager fm, LayoutInflater inflater, String content,
                                      String ok, String cancel, String exit, String drawText,
-                                     IAlertClickedCallBack alertClickedCallBack, Context context, String TAG) {
+                                     IAlertClickedCallBack alertClickedCallBack, Context context, String TAG,int dialogButtonColor, int circleTextBgColor) {
         try {
             BblContentFragment fragment = BblContentFragment.newInstance(TAG);
             if (TextUtils.isEmpty(content)) {
@@ -95,8 +100,9 @@ public class BblDialogManager {
             }
             fragment.setContent(content, ok, cancel, exit, null);
             fragment.setClickedCallBack(alertClickedCallBack);
+            fragment.setDialogButtonColor(dialogButtonColor);
             BblDialog sampleDialog = new BblDialog();
-            sampleDialog.setContentFragment(fragment, R.layout.layout_bbl_content, inflater, content, drawText, context);
+            sampleDialog.setContentFragment(fragment, R.layout.layout_bbl_content, inflater, content, drawText, context,circleTextBgColor);
             sampleDialog.setDisMissCallBack(null);
             fm.beginTransaction().add(sampleDialog, "Test").commit();
         } catch (Exception e) {
