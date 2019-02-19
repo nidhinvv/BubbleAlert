@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 BblDialogManager.showBblDialog(getSupportFragmentManager(),
                         LayoutInflater.from(this), "success", this.getString(R.string.ok),
                         null, ConstantsIcons.ALERT_ICON_SUCCESS,
-                        alertHandler, this, AppConstants.TAG_FEEDBACK_SUCCESS, Color.RED);
+                        alertHandler, this, AppConstants.TAG_FEEDBACK_SUCCESS, Color.RED,Color.CYAN);
                 break;
             case R.id.button2:
 
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             public void onCancelClicked(String tag) {
                                 Toast.makeText(MainActivity.this, getString(R.string.alert_cancel), Toast.LENGTH_SHORT).show();
                             }
-                        }, this, "", "", true, TAG,Color.parseColor("#0040FF"));
+                        }, this, "", "", true, TAG,Color.parseColor("#0040FF"),Color.CYAN);
 
 
                 break;
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                             }
 
-                        }, this, AppConstants.TAG_ERROR_DIALOG,Color.BLUE);
+                        }, this, AppConstants.TAG_ERROR_DIALOG,Color.BLUE,Color.CYAN);
 
 
                 break;
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 BblDialogManager.showBblDialog(getSupportFragmentManager(),
                         LayoutInflater.from(this), getString(R.string.msg_logout_confirmation), getString(R.string.yes),
                         getString(R.string.no), ConstantsIcons.ALERT_ICON_INFO,
-                        alertHandler, this, AppConstants.TAG_LOGOUT_DIALOG,Color.BLACK);
+                        alertHandler, this, AppConstants.TAG_LOGOUT_DIALOG,Color.BLACK,Color.CYAN);
 
 
                 break;
