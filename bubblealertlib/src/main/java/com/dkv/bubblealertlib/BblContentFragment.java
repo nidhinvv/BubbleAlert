@@ -1,6 +1,7 @@
 package com.dkv.bubblealertlib;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -37,6 +38,7 @@ public class BblContentFragment extends BaseDialogFragment {
     private boolean isMultiLineEditText = false;
     private String hintText = null;
     private String sDialogTitle = null;
+    private int dialogButtonColor = Color.RED;
 
     public BblContentFragment() {
     }
@@ -74,6 +76,8 @@ public class BblContentFragment extends BaseDialogFragment {
         btnOk = (TextView) view.findViewById(R.id.btnOk);
         btnExit = (TextView) view.findViewById(R.id.btnExit);
         btnCancel = (TextView) view.findViewById(R.id.btnCancel);
+        setBbuttonBackgroundColor(dialogButtonColor);
+
         edtLibName = (EditText) view.findViewById(R.id.edtLibName);
 
         btnOk.setOnClickListener(clickHandler);
@@ -115,6 +119,12 @@ public class BblContentFragment extends BaseDialogFragment {
             edtLibName.setMovementMethod(new ScrollingMovementMethod());
         }
 
+    }
+
+    private void setBbuttonBackgroundColor(int dialogButtonColor) {
+        btnOk.setBackgroundColor(dialogButtonColor);
+        btnExit.setBackgroundColor(dialogButtonColor);
+        btnCancel.setBackgroundColor(dialogButtonColor);
     }
 
     @Override
@@ -207,7 +217,10 @@ public class BblContentFragment extends BaseDialogFragment {
         this.textContent = textContent;
         return this;
     }
-
+    public BblContentFragment setDialogButtonColor(int dialogButtonColor) {
+        this.dialogButtonColor = dialogButtonColor;
+        return this;
+    }
     private static class ClickHandler implements View.OnClickListener {
 
         WeakReference<BblContentFragment> bblRef = null;

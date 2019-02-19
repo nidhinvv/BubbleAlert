@@ -1,5 +1,6 @@
 package com.dkv.bubblealertview;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -29,10 +30,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         alertHandler = new AlertClickHandler();
 
-        Button btn1 = (Button) findViewById(R.id.button1);
-        Button btn2 = (Button) findViewById(R.id.button2);
-        Button btn3 = (Button) findViewById(R.id.button3);
-        Button btn4 = (Button) findViewById(R.id.button4);
+        Button btn1 = findViewById(R.id.button1);
+        Button btn2 = findViewById(R.id.button2);
+        Button btn3 = findViewById(R.id.button3);
+        Button btn4 = findViewById(R.id.button4);
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 BblDialogManager.showBblDialog(getSupportFragmentManager(),
                         LayoutInflater.from(this), "success", this.getString(R.string.ok),
                         null, ConstantsIcons.ALERT_ICON_SUCCESS,
-                        alertHandler, this, AppConstants.TAG_FEEDBACK_SUCCESS);
+                        alertHandler, this, AppConstants.TAG_FEEDBACK_SUCCESS, Color.RED);
                 break;
             case R.id.button2:
 
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             public void onCancelClicked(String tag) {
                                 Toast.makeText(MainActivity.this, getString(R.string.alert_cancel), Toast.LENGTH_SHORT).show();
                             }
-                        }, this, "", "", true, TAG);
+                        }, this, "", "", true, TAG,Color.parseColor("#0040FF"));
 
 
                 break;
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                             }
 
-                        }, this, AppConstants.TAG_ERROR_DIALOG);
+                        }, this, AppConstants.TAG_ERROR_DIALOG,Color.BLUE);
 
 
                 break;
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 BblDialogManager.showBblDialog(getSupportFragmentManager(),
                         LayoutInflater.from(this), getString(R.string.msg_logout_confirmation), getString(R.string.yes),
                         getString(R.string.no), ConstantsIcons.ALERT_ICON_INFO,
-                        alertHandler, this, AppConstants.TAG_LOGOUT_DIALOG);
+                        alertHandler, this, AppConstants.TAG_LOGOUT_DIALOG,Color.BLACK);
 
 
                 break;

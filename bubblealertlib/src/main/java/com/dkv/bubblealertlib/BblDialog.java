@@ -69,10 +69,11 @@ public class BblDialog extends BblDialogFragmentBase {
     }
 
     public BblDialog setContentFragment(BaseFragment contentFragment, int ID,
-                                        LayoutInflater inflater, String content, String drawText, Context context) {
+                                        LayoutInflater inflater, String content, String drawText, Context context,int dialogTitleColorId) {
         this.contentFragment = contentFragment;
         this.context = context;
         this.drawText = drawText;
+        this.dialogTitleColorId = dialogTitleColorId;
         int tempWidth = (62 * context.getResources().getDisplayMetrics().widthPixels) / 100;
         int tempHeight = 0;
         setWidth(tempWidth);

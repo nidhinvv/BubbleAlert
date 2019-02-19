@@ -2,6 +2,7 @@ package com.dkv.bubblealertlib;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,15 +22,13 @@ public abstract class BblDialogFragmentBase extends DialogFragment implements Di
 
     protected FrameLayout.LayoutParams containerLayoutParams;
     protected String drawText = "i";
+    protected int dialogTitleColorId;
     private AlertDrawable alertDrawable = null;
     private FrameLayout container = null;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int outerCircleRadius = getResources().getInteger(R.integer.outerCircleRadius);
-        int arc = getResources().getInteger(R.integer.dialogArc);
-        alertDrawable = new AlertDrawable(outerCircleRadius, 30, arc, drawText, getContext());
+
     }
 
     @NonNull
@@ -69,6 +68,10 @@ public abstract class BblDialogFragmentBase extends DialogFragment implements Di
         super.onViewCreated(view, savedInstanceState);
         container = (FrameLayout) view;
         containerLayoutParams = new FrameLayout.LayoutParams(getWidth(), getHeight());
+
+        int outerCircleRadius = getResources().getInteger(R.integer.outerCircleRadius);
+        int arc = getResources().getInteger(R.integer.dialogArc);
+        alertDrawable = new AlertDrawable(outerCircleRadius, 30, arc, drawText, getContext(),dialogTitleColorId);
         container.setBackgroundDrawable(alertDrawable);
     }
 
